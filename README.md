@@ -2,23 +2,23 @@
 
 > An course practice to perform frequent item sets mining. The benchmark dataset freq items dataset is supported by the IBM Almaden Quest research group, which contains 1,000 items and 100,000 transactions. For simplicity, each number uniquely identifies an item.
 
- 
+<br>
 
 The frequent itemset mining runs in various times, which is very related to the complexity of the algorithms. Scanning transactions of the database is time consuming. *Apriori* is a classical way to mine frequent itemsets. *FP-growth* and *Relim* use more efficient ways to construct data structures and reduce the times of database scanning. This report shows different running times and explanations when performing frequent items mining with 3 different algorithms.
 
- 
+<br>
 
-**Environment**
+### **Environment**
 
-System: Windows 10, 64-bit Operating System
+* System: Windows 10, 64-bit Operating System
 
-Processor: Intel(R) Core(TM) i7-7700HQ CPU @ 2.8GHz 2.80Hz
+* Processor: Intel(R) Core(TM) i7-7700HQ CPU @ 2.8GHz 2.80Hz
 
-Installed RAM: 16.0 GB
+* Installed RAM: 16.0 GB
 
- 
+<br>
 
-**Apriori:** 
+### **Apriori:** 
 
 Running time: 1:04:11.844760
 
@@ -27,10 +27,10 @@ The [*Apriori Algorithm*](./frequent_mining_apriori.py) repeats the process of â
 The computational complexity of this approach is *O(2n),* because there are 2n possible candidates item sets. So, the computing time increasing rapidly as the data base goes larger.
 
  
-
+<br>
  
 
-**Frequent Pattern Growth (FP-growth):**
+### **Frequent Pattern Growth (FP-growth):**
 
 Running time: 0:02:50.800351
 
@@ -39,10 +39,10 @@ The [*FP-growth Algorithm*](./frequent_mining_fp-growth.py) is a much more effic
 The complexity of this approach is *O(n2)*. So, the running time was much shorter than the *Apriori Algorithm.*
 
  
-
+<br>
  
 
-**Recursive Elimination (Relim):**
+### **Recursive Elimination (Relim):**
 
 Running time: 0:00:37.440106
 
@@ -54,9 +54,9 @@ Running time: 0:00:37.440106
 
 Relim would have a better performance in small support or data with high frequency, and it might be slower when meeting long frequent dataset. As the experiments showed the *Relim Algorithm* performs best among the three methods in our dataset.
 
- 
+<br>
 
-**Closed & Maximal Frequent Itemset:**
+### **Closed & Maximal Frequent Itemset:**
 
 The [closed & maximal](./frequent_mining_closed_maximal.py) frequent Itemset is generated based on *Relim Algorithm*, because itâ€™s relatively the most efficient algorithm.
 
@@ -64,7 +64,7 @@ Closed Frequent Itemset: An itemset is maximal frequent if none of its immediate
 
 Maximal Frequent Itemset: An itemset is closed if none of its immediate supersets has the same support as the itemset.
 
- 
+<br>
 
 **Number of Frequent Itemsets (min_sup = 150):**
 
@@ -74,8 +74,8 @@ Closed Sets:  18650
 
 Maximum Sets: 2399
 
- 
+<br>
 
-**Notes:**
+### **Notes:**
 
 All .py files were written in Python 3. And the mining results for each method was exported to .csv file.
